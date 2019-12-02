@@ -1,0 +1,100 @@
+<div>
+  <label>
+    Nom d'utilisateur:
+    <input type="text" name="name" [formControl]="username">
+  </label>
+  <label>
+    Email:
+    <input type="email" name="email" [formControl]="email">
+  </label>
+  <label>
+    Mot de passe:
+    <input type="text" name="mdp" [formControl]="mdp">
+  </label>
+  <div>
+    <h3>Addresse</h3>
+
+    <label>
+      Rue:
+      <input type="text" [formControl]="street">
+    </label>
+
+    <label>
+      Ville:
+      <input type="text" [formControl]="city">
+    </label>
+
+    <label>
+      Code Postal:
+      <input type="text" [formControl]="zip">
+    </label>
+  </div>
+</div>
+<button type="submit" (click)="changeUsername()">Enter</button>
+
+<div *ngIf="user">
+  Nom d'utilisateur: {{ user.username }}
+  <br>
+  Email: {{ user.email }}
+  <br>
+  Mot de passe: {{ user.mdp }}
+  <br>
+  Addresse:
+  <br>
+  Rue:{{ user.street }}
+  <br>
+  Ville: {{ user.city }}
+  <br>
+  Code Postal: {{ user.zip }}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form [formGroup]="profilUser" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Nom d'utilisateur:
+      <input type="text" name="name" formControlName="username">
+    </label>
+    <label>
+      Email:
+      <input type="email" name="email" formControlName="email">
+    </label>
+    <label>
+      Mot de passe:
+      <input type="text" name="mdp" formControlName="mdp">
+    </label>
+    <div formGroupName="address">
+      <h3>Addresse</h3>
+
+      <label>
+        Rue:
+        <input type="text" formControlName="street">
+      </label>
+
+      <label>
+        Ville:
+        <input type="text" formControlName="city">
+      </label>
+
+      <label>
+        Code Postal:
+        <input type="text" formControlName="zip">
+      </label>
+    </div>
+  </div>
+  <button type="submit" [disabled]="!profilUser.valid">Enter</button>
+</form> -->
